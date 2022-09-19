@@ -1,2 +1,2 @@
 ### Деталізація матеріальних потреб
-![](../../../MindMap.drawio.png)
+![](MindMap.drawio.png)
