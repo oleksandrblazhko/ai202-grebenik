@@ -1,0 +1,158 @@
+{
+  "description": "Опис предметної області ПП",
+  "type": "object",
+  "properties": {
+    "user": {
+      "description": "Опис користувача",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Ім'я користувача",
+          "type": "string"
+        },
+        "surname": {
+          "description": "прізвище користувача",
+          "type": "string"
+        },
+        "age": {
+          "description": "Вік користувача",
+          "type": "number"
+        },
+        "gender": {
+          "description": "Стать користувача",
+          "type": "string"
+        },
+        "e-mail": {
+          "description": "Електрона адреса користувача",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Номер телефона",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "surname",
+        "age",
+        "gender",
+        "e-mail",
+        "phone"
+      ]
+    },
+    "online-order": {
+      "description": "Опис онлайн-замовлення",
+      "type": "object",
+      "properties": {
+        "full-name": {
+          "description": "Ім'я, прізвище, побатькові",
+          "type": "string"
+        },
+        "adress": {
+          "description": "Адреса на яку доставити замовлення",
+          "type": "string"
+        },
+        "count": {
+          "description": "Кількість для замовлення",
+          "type": "number"
+        },
+        "cost": {
+          "description": "Сума до оплати",
+          "type": "number"
+        },
+        "data": {
+          "description": "Дата на яку замовити",
+          "type": "data"
+        },
+        "e-pay": {
+          "description": "Електронна оплата",
+          "type": "object",
+          "properties": {
+            "fullname-sender": {
+              "description": "ПІБ відправника",
+              "type": "string"
+            },
+            "fullname-customer": {
+              "description": "ПІБ замовника",
+              "type": "string"
+            },
+            "account-number": {
+              "description": "Номер рахунку на який відправляти кошти",
+              "type": "string"
+            },
+            "sum":{
+              "description": "Сума для відправки",
+              "type": "number"
+            }
+          },
+          "required": [
+            "fullname-sender",
+            "fullname-customer",
+            "account-number",
+            "sum"
+          ]
+        }
+      },
+      "required": [
+        "full-name",
+        "adress",
+        "count",
+        "cost",
+        "data",
+        "e-pay"
+      ]
+    },
+    "home_info": {
+      "description": "Інформація про житло ",
+      "type": "object",
+      "properties": {
+        "hometype": {
+          "description": "тип житла",
+          "type": "string"
+        },
+        "photo": {
+          "description": "Фото житла",
+          "type": "image"
+        },
+        "price": {
+          "description": "Ціна за житло",
+          "type": "number"
+        },
+        "countrooms": {
+          "description": "кількість кімнат",
+          "type": "number"
+        },
+        "info_location": {
+          "description": "Iнформація про розташування",
+          "type": "object",
+          "properties": {
+            "country": {
+              "description": "Країна",
+              "type": "string"
+            },
+            "city": {
+              "description": "Місто",
+              "type": "string"
+            },
+            "area": {
+              "description": "Район",
+              "type": "string"
+            }
+          },
+          "required": [
+            "country",
+            "city",
+            "area"
+          ]
+        }
+      },
+      "required": [
+        "hometype",
+        "photo",
+        "price",
+        "countrooms",
+        "info_location"
+      ]
+    }
+  }
+}
