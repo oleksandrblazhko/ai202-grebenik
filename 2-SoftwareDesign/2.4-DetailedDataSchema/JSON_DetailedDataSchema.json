@@ -1,0 +1,193 @@
+{
+  "title": "Schema",
+  "description": "Опис предметної області ПП",
+  "bsonType": "object",
+  "properties": {
+    "user": {
+      "description": "Опис користувача",
+      "bsonType": "object",
+      "properties": {
+        "name": {
+          "description": "Ім'я користувача",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "surname": {
+          "description": "прізвище користувача",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "age": {
+          "description": "Вік користувача",
+          "bsonType": "int",
+          "minimum": 1
+        },
+        "gender": {
+          "description": "Стать користувача",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "e-mail": {
+          "description": "Електрона адреса користувача",
+          "bsonType": "string",
+          "format" : "email"
+        },
+        "phone": {
+          "description": "Номер телефона",
+          "bsonType": "string",
+          "pattern" : "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
+        }
+      },
+      "required": [
+        "name",
+        "surname",
+        "age",
+        "gender",
+        "e-mail",
+        "phone"
+      ]
+    },
+    "online-order": {
+      "description": "Опис онлайн-замовлення",
+      "bsonType": "object",
+      "properties": {
+        "full-name": {
+          "description": "Ім'я, прізвище, побатькові",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "adress": {
+          "description": "Адреса на яку доставити замовлення",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "count": {
+          "description": "Кількість для замовлення",
+          "bsonType": "int",
+          "minimum": 1
+        },
+        "cost": {
+          "description": "Сума до оплати",
+          "bsonType": "float"
+        },
+        "data": {
+          "description": "Дата на яку замовити",
+          "bsonType": "string",
+          "format" : "date"
+        },
+        "e-pay": {
+          "description": "Електронна оплата",
+          "bsonType": "object",
+          "properties": {
+            "fullname-sender": {
+              "description": "ПІБ відправника",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "fullname-customer": {
+              "description": "ПІБ замовника",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "account-number": {
+              "description": "Номер рахунку на який відправляти кошти",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "sum":{
+              "description": "Сума для відправки",
+              "bsonType": "number",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "fullname-sender",
+            "fullname-customer",
+            "account-number",
+            "sum"
+          ]
+        }
+      },
+      "required": [
+        "full-name",
+        "adress",
+        "count",
+        "cost",
+        "data",
+        "e-pay"
+      ]
+    },
+    "home_info": {
+      "description": "Інформація про житло ",
+      "bsonType": "object",
+      "properties": {
+        "hometype": {
+          "description": "тип житла",
+          "bsonType": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "photo": {
+          "description": "Фото житла",
+          "bsonType": "binData",
+          "minLength": 1,
+          "maxLength": 12005760
+        },
+        "price": {
+          "description": "Ціна за житло",
+          "bsonType": "number",
+          "minimum": 1
+        },
+        "countrooms": {
+          "description": "кількість кімнат",
+          "bsonType": "int",
+          "minimum": 1
+        },
+        "info_location": {
+          "description": "Iнформація про розташування",
+          "bsonType": "object",
+          "properties": {
+            "country": {
+              "description": "Країна",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "city": {
+              "description": "Місто",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "area": {
+              "description": "Район",
+              "bsonType": "string",
+              "minLength": 1,
+              "maxLength": 64
+            }
+          },
+          "required": [
+            "country",
+            "city",
+            "area"
+          ]
+        }
+      },
+      "required": [
+        "hometype",
+        "photo",
+        "price",
+        "countrooms",
+        "info_location"
+      ]
+    }
+  }
+}
