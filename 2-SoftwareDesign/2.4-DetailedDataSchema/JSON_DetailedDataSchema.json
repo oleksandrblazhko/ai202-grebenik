@@ -33,7 +33,7 @@
         "e-mail": {
           "description": "Електрона адреса користувача",
           "bsonType": "string",
-          "pattern" : "^([a-z0-9][a-z0-9._-]*@[a-z][a-z0-9._-]*\\.[a-z]{2,4})$')"
+          "format" : "email"
         },
         "phone": {
           "description": "Номер телефона",
