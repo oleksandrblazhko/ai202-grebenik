@@ -1,6 +1,7 @@
 @startuml
 title Usecase for Information system
 left to right direction
+hide circle
 skinparam packageStyle rect
 actor User
 actor Homeless_consumer
