@@ -1,0 +1,16 @@
+@startuml
+title Usecase for Information system
+left to right direction
+hide circle
+skinparam packageStyle rect
+actor User
+actor Homeless_consumer
+rectangle Software {
+ Homeless_consumer --|> User
+ User -- (Authorize the user)
+ Homeless_consumer -- (Find housing)
+
+ (Create an order) ..> (Find housing) : <<extend>>
+ (Find housing) ..> (Authorize the user) : <<include>>
+}
+@enduml

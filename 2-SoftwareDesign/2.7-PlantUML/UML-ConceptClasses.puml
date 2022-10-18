@@ -1,0 +1,12 @@
+@startuml
+title Classes Diagram
+
+hide circle
+
+Class User
+Class Online_order
+Class E_pay
+
+User"1" --> "+"Online_order : create
+Online_order"1" o-- "1"E_pay
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+title Example of Activity Diagram
+
+start
+:User enters housing location data;
+:The program analyzes user data;
+
+if (Is Data Correct?) then (yes)
+  :The program displays houses with this location;
+else (no)
+  :Incorrect location that you want to choose!;
+endif
+
+stop
+
+@enduml
