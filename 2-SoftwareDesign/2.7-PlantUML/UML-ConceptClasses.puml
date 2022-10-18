@@ -1,6 +1,8 @@
 @startuml
 title Classes Diagram
 
+hide circle
+
 Class User
 Class Online_order
 Class E_pay
